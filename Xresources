@@ -4,7 +4,7 @@
 URxvt*font:		xft:Inconsolata\ for\ Powerline:pixelsize=17:antialias=true:hinting=true
 
 URxvt.borderless:	1
-URxvt.transparent:	true
+!URxvt.transparent:	true
 URxvt.scrollBar:	false
 URxvt.saveLines:	4095
 

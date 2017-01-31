@@ -39,7 +39,7 @@ alias ez="e ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias ei3="e ~/.i3/config"
 
-[[ -f /usr/bin/g4 ]] && source ~/.goog_zshrc
+[[ -f /usr/bin/g4 ]] && source ~/goog.zsh
 
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_MODE='awesome-patched'

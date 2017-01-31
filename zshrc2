@@ -13,7 +13,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-completions)
+plugins=(git zsh-completions globalias)
 
 autoload -U compinit && compinit
 
@@ -39,28 +39,9 @@ alias ez="e ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias ei3="e ~/.i3/config"
 
-globalias() {
-   if [[ $LBUFFER =~ ' ?[A-Z0-9]+$' ]]; then
-     zle _expand_alias
-     zle expand-word
-   fi
-   zle self-insert
-}
-
-zle -N globalias
-
-bep() {
-    ( speaker-test -t sine -f 1000 &> /dev/null)& pid=$! ; sleep .2s ; kill -9 $pid
-}
-
-bindkey " " globalias
-bindkey ":" globalias
-bindkey "/" globalias
-bindkey "^ " magic-space           # control-space to bypass completion
-bindkey -M isearch " " magic-space # normal space during searches
-
-source ~/.goog_zshrc
+[[ -f /usr/bin/g4 ]] && source ~/.goog_zshrc
 
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
